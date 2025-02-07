@@ -53,53 +53,5 @@ class Program
                     break;
             }
         }
-        Hesap hesap1 = new Hesap(1111, 1000, 1);
-        Hesap hesap2 = new Hesap(1112, 2000, 2);
-        Hesap hesap3 = new Hesap(1113, 3000, 3);
-
-        try
-        {
-            Console.WriteLine("Havale işlemi :");
-            hesap1.Havale(hesap2, 500);
-            
-        }
-        catch (NegatifDegerException ex)
-        {
-            Console.WriteLine(ex.Message);
-            Logger.Logla(ex.Message);
-        }
-        catch (YetersizBakiyeException ex)
-        {
-            Console.WriteLine(ex.Message);
-            Logger.Logla(ex.Message);
-        }
-        catch (HesapBulunamadiException ex)
-        {
-            Console.WriteLine(ex.Message);
-            Logger.Logla(ex.Message);
-        }
-
-        try
-        {
-            hesap2.Havale(hesap3, 4000);
-            hesap3.Havale(hesap1, 1500);
-        }
-        catch (NegatifDegerException ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-        catch (YetersizBakiyeException ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-        catch (HesapBulunamadiException ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-
-        finally
-        {
-            Console.WriteLine("İşlemler tamamlandı"); // bize işlemlerin tamamlandığını gösterir. İşlemlerin başarılı olduğunu söylemez.
-        }
     }
 }
